@@ -9,9 +9,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Soumyadeepjana1/online-shop-demo-gitops-.git
+    repoURL: https://github.com/Soumyadeepjana1/argocd-gitops.git
     targetRevision: master
-    path: multicluster/root-app
+    path: 05_argocd_features/multicluster
 
   destination:
     server: https://192.168.49.2:8443 
