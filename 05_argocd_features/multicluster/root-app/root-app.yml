@@ -1,6 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-
 metadata:
   name: multi-stage-root
   namespace: argocd
@@ -9,10 +8,15 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/Soumyadeepjana1/argocd-gitops.git
+    repoURL: https://github.com/Soumyadeepjana1/argocd-gitops.git 
     targetRevision: master
     path: 05_argocd_features/multicluster
 
   destination:
     server: https://192.168.49.2:8443 
     namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
